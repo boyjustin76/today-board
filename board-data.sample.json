@@ -1,0 +1,323 @@
+{
+ "meta": {
+  "me": "민지",
+  "agent": "비서",
+  "headline": "여름 이벤트 영상 마무리 중",
+  "updated": "now-5",
+  "day": {
+   "start": "09:00",
+   "end": "18:00"
+  },
+  "projects": [
+   {
+    "id": "summer",
+    "name": "여름 이벤트 영상",
+    "order": 1
+   },
+   {
+    "id": "banner",
+    "name": "새 캐릭터 배너",
+    "order": 2
+   },
+   {
+    "id": "store",
+    "name": "스토어 스크린샷",
+    "order": 3,
+    "when": "다음 주"
+   },
+   {
+    "id": "spring",
+    "name": "봄 시즌 영상",
+    "order": 9,
+    "past": true,
+    "tag": "납품 끝",
+    "note": "4언어 × 3사이즈 12편 납품 끝. 다음에 같은 틀로 다시 쓸 수 있음"
+   },
+   {
+    "id": "etc",
+    "name": "기타",
+    "order": 99
+   }
+  ],
+  "cal": [
+   {
+    "date": "today-3",
+    "label": "봄 시즌 영상 납품",
+    "kind": "done"
+   },
+   {
+    "date": "today+6",
+    "label": "스토어 스크린샷 시작",
+    "kind": "plan"
+   }
+  ]
+ },
+ "cards": {
+  "now-summer-ok": {
+   "zone": "now",
+   "proj": "summer",
+   "kind": "decide",
+   "order": 1,
+   "at": "now-20",
+   "effort": "3분",
+   "waiting": "편집 담당",
+   "title": "여름 이벤트 영상 한국어 9:16 시안 OK?",
+   "impact": "나머지 언어·사이즈를 못 만듦. 내일 마감",
+   "options": [
+    "OK · 진행",
+    "자막만 고치기",
+    "다시"
+   ],
+   "path": "previews/summer_kr_916.html"
+  },
+  "now-banner-look": {
+   "zone": "now",
+   "proj": "banner",
+   "kind": "look",
+   "order": 2,
+   "at": "now-45",
+   "effort": "1분",
+   "title": "새 캐릭터 배너 색 2안 보기",
+   "detail": "A는 밝게, B는 어둡게"
+  },
+  "park-store-start": {
+   "zone": "park",
+   "proj": "store",
+   "order": 1,
+   "title": "스토어 스크린샷 다음 주에 시작할지",
+   "ask": "스토어 스크린샷을 다음 주에 시작할까요?",
+   "detail": "배너가 끝난 뒤"
+  },
+  "park-etc-cleanup": {
+   "zone": "park",
+   "proj": "etc",
+   "order": 2,
+   "title": "공유 폴더 정리",
+   "ask": "공유 폴더를 프로젝트별로 정리할까요?",
+   "effort": "10초",
+   "answer": "네, 진행",
+   "answerNote": "금요일 오후에",
+   "answeredAt": "now-70",
+   "answerDate": "today",
+   "answerAsk": "공유 폴더를 프로젝트별로 정리할까요?",
+   "answerOptions": [
+    "네, 진행",
+    "아니요, 안 함",
+    "나중에 다시",
+    "기타"
+   ],
+   "answerNotified": "inbox",
+   "answerLog": [
+    {
+     "ask": "공유 폴더를 프로젝트별로 정리할까요?",
+     "options": [
+      "네, 진행",
+      "아니요, 안 함",
+      "나중에 다시",
+      "기타"
+     ],
+     "pick": "네, 진행",
+     "note": "금요일 오후에",
+     "at": "now-70",
+     "date": "today"
+    }
+   ]
+  },
+  "due-summer": {
+   "zone": "due",
+   "proj": "summer",
+   "date": "today+1",
+   "title": "여름 이벤트 영상",
+   "mine": "한국어 시안 OK"
+  },
+  "due-banner": {
+   "zone": "due",
+   "proj": "banner",
+   "date": "today+5",
+   "title": "새 캐릭터 배너",
+   "mine": "색 고르기"
+  },
+  "done-summer-sub": {
+   "zone": "done",
+   "proj": "summer",
+   "at": "now-150",
+   "title": "여름 이벤트 영상 자막 4언어 확인"
+  },
+  "done-banner-draft": {
+   "zone": "done",
+   "proj": "banner",
+   "at": "now-110",
+   "title": "새 캐릭터 배너 초안 2안"
+  },
+  "done-etc-mail": {
+   "zone": "done",
+   "proj": "etc",
+   "at": "now-200",
+   "title": "주간 메일 정리"
+  },
+  "run-agent-a": {
+   "zone": "run",
+   "proj": "summer",
+   "state": "run",
+   "order": 1,
+   "who": "편집 에이전트",
+   "since": "now-60",
+   "title": "여름 이벤트 영상 영어·일본어 자막 넣는 중"
+  },
+  "run-agent-b": {
+   "zone": "run",
+   "proj": "etc",
+   "state": "idle",
+   "order": 2,
+   "who": "조사 에이전트",
+   "title": "대기"
+  },
+  "later-summer-60": {
+   "zone": "later",
+   "proj": "summer",
+   "order": 1,
+   "title": "여름 이벤트 영상 가로형 홍보 컷",
+   "detail": "영상 납품 뒤",
+   "said": "가로형은 납품 끝나고 생각해 보자"
+  },
+  "later-store-shots": {
+   "zone": "later",
+   "proj": "store",
+   "order": 2,
+   "when": "다음 주",
+   "title": "스토어 스크린샷 5장 구성 잡기",
+   "detail": "배너 그림을 다시 씀"
+  },
+  "later-store-copy": {
+   "zone": "later",
+   "proj": "store",
+   "order": 3,
+   "when": "다음 주",
+   "title": "스토어 소개 문구 3언어",
+   "detail": "번역 에이전트에게"
+  },
+  "later-etc-guide": {
+   "zone": "later",
+   "proj": "etc",
+   "order": 4,
+   "title": "작업 규칙 한 장으로 정리",
+   "said": "새로 오는 사람이 읽을 수 있게"
+  },
+  "vary-summer-a": {
+   "zone": "vary",
+   "proj": "summer",
+   "order": 1,
+   "branch": "A안",
+   "title": "여름 이벤트 영상 A안",
+   "langs": [
+    "KO",
+    "EN",
+    "JA",
+    "ZH"
+   ],
+   "ratios": [
+    "9:16",
+    "1:1",
+    "16:9"
+   ],
+   "path": "outputs/summer_a",
+   "cells": {
+    "KO|9:16": {
+     "state": "look",
+     "note": "자막 위치 확인"
+    },
+    "KO|1:1": {
+     "state": "make"
+    },
+    "KO|16:9": {
+     "state": "make"
+    },
+    "EN|9:16": {
+     "state": "make"
+    },
+    "JA|9:16": {
+     "state": "make"
+    },
+    "ZH|9:16": {
+     "state": "redo",
+     "note": "글자가 잘림"
+    }
+   }
+  },
+  "vary-summer-b": {
+   "zone": "vary",
+   "proj": "summer",
+   "order": 2,
+   "branch": "B안",
+   "title": "여름 이벤트 영상 B안",
+   "langs": [
+    "KO",
+    "EN",
+    "JA",
+    "ZH"
+   ],
+   "ratios": [
+    "9:16",
+    "1:1",
+    "16:9"
+   ],
+   "detail": "A안이 정해지면 시작"
+  },
+  "vary-spring": {
+   "zone": "vary",
+   "proj": "spring",
+   "order": 1,
+   "branch": "본편",
+   "title": "봄 시즌 영상",
+   "langs": [
+    "KO",
+    "EN",
+    "JA",
+    "ZH"
+   ],
+   "ratios": [
+    "9:16",
+    "1:1",
+    "16:9"
+   ],
+   "cells": {
+    "KO|9:16": {
+     "state": "up"
+    },
+    "KO|1:1": {
+     "state": "up"
+    },
+    "KO|16:9": {
+     "state": "up"
+    },
+    "EN|9:16": {
+     "state": "up"
+    },
+    "EN|1:1": {
+     "state": "up"
+    },
+    "EN|16:9": {
+     "state": "up"
+    },
+    "JA|9:16": {
+     "state": "up"
+    },
+    "JA|1:1": {
+     "state": "up"
+    },
+    "JA|16:9": {
+     "state": "up"
+    },
+    "ZH|9:16": {
+     "state": "up"
+    },
+    "ZH|1:1": {
+     "state": "up"
+    },
+    "ZH|16:9": {
+     "state": "up"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,18 @@
+# 내 상황판 자료 — 저장소에 올리지 않는다
+board-data.json
+board-data.js
+inbox/
+.board.lock
+*.tmp*
+__pycache__/
+
+# 만드는 사람끼리 쓰는 문서 — 배포하지 않는다
+설계.md
+시험_*.md
+Sites_*.md
+Sites_*.zip
+
+# start.bat 이 내려받는 전용 파이썬
+tools/python/
+tools/python.partial/
+Canvas_*.md
