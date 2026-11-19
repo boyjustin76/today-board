@@ -39,16 +39,17 @@ board serve                              # 터미널 하나를 차지합니다. 
 
 | zone | 뜻 | 꼭 넣을 것 | 자주 쓰는 것 |
 |---|---|---|---|
-| `now` | **사용자가 지금 할 일** (확인·승인·파일 주기) | `title` | `impact`(안 하면 무엇이 멈추나), `detail`(덧붙일 말), `effort`(걸리는 시간, 예: 3분), `kind`(`look`=보기만 · `decide`=고르기), `options`(답 고르기), `path`(볼 파일), `order` |
+| `now` | **사용자가 지금 할 일** (확인·승인·파일 주기) | `title`, `kind`, `at`(올린 HH:MM) | `impact`(안 하면 무엇이 멈추나), `detail`(덧붙일 말), `effort`(걸리는 시간, 예: 3분), `options`(답 고르기), `path`(볼 파일), `order` |
 | `park` | 급하지 않은 결정 대기 | `title`, `ask`(물음 한 문장) | `detail`, `options`, `effort` |
-| `run` | 에이전트가 하는 일 (에이전트마다 한 장) | `title`, `state` | `since`(시작 HH:MM), `path`(결과), `who`(에이전트 이름) |
+| `run` | 에이전트가 하는 일 (에이전트마다 한 장) | `title`, `state`, `who`(에이전트 이름 — 화면에는 이름과 상태 점이 보이고 제목은 마우스를 올려야 보입니다) | `since`(시작 HH:MM), `path`(결과) |
 | `due` | 마감 | `title`, `date`(YYYY-MM-DD) | `time`(HH:MM), `mine`(사용자 몫) |
 | `later` | 나중에 할 일 | `title` | `when`, `detail`, `said`(사용자가 한 말) |
 | `vary` | 변형 표(언어×크기처럼 칸이 많은 일) | `title`, `langs`, `ratios` | `cells`, `branch`(갈래 이름) |
 | `done` | 끝난 일 | `title` | `at`(끝난 HH:MM, `move`가 자동으로 넣음) |
 
-- `run` 카드의 `state`: `run`(하는 중) · `idle`(대기) · `stop`(막힘).
-- `vary` 칸의 `state`: `make`(만드는 중) · `look`(봐 주세요) · `redo`(다시) · `up`(올림·끝). 없으면 시작 전.
+- `now` 카드의 `kind`: `click`(눌러 주기·해 주기 — ✓만) · `look`(봐 주기) · `decide`(고르기) · `answer`(답 쓰기). **답 버튼은 `look`·`decide`·`answer`일 때만 나옵니다.** `options`를 줬다면 `kind`를 꼭 넣습니다.
+- `run` 카드의 `state`: `run`(하는 중) · `idle`(쉼 — 일이 없을 때) · `wait`(사용자·다른 일을 기다림) · `stop`(막힘).
+- `vary` 칸의 `state`: `make`(만드는 중) · `look`(봐 주세요) · `ok`(승인) · `redo`(다시) · `up`(올림·끝). 없으면 시작 전.
 - `proj`에 프로젝트 id를 넣으면 프로젝트별로 묶여 보입니다. 프로젝트 목록은 `meta.projects`(`[{"id":"a","name":"…","order":1}]`)에 있습니다. 모르면 `etc`.
 - 칸의 전체 목록과 화면에서의 쓰임은 `docs/data.md`에 있습니다.
 
@@ -64,6 +65,7 @@ board vary vary-banner "KO|9:16" look        # 변형 표 한 칸 (칸 이름은
 board set-meta headline="오늘은 보고서 마감"
 board inbox                                  # 사용자가 화면에서 남긴 답·체크
 board inbox --ack                            # 처리했으면 읽음으로
+board card update <id> seenAt=HH:MM          # 답을 읽었다고 화면에 표시(보냄 → 읽음)
 ```
 - 값은 `key=value`로 씁니다. 숫자·`true`·`false`는 그대로, 나머지는 글로 들어갑니다. `key=null`은 그 칸을 지웁니다.
 - 값에 빈칸이 있으면 따옴표로 쌉니다. PowerShell에서는 `'title=보고서 초안 확인'`처럼 전체를 작은따옴표로 싸면 안전합니다.
